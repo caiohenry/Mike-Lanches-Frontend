@@ -1,0 +1,95 @@
+@use "../../styles/index" as *;
+
+.header-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: $color-secondary;
+  color: white;
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    width: 50px;
+    margin-right: 10px;
+  }
+
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+
+  .navbar {
+    .item-header {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 5px 10px;
+      transition: 0.3s ease;
+      font-weight: bold;
+    }
+
+    .item-header:hover {
+      color: white;
+      border-bottom: 2px solid white;
+    }
+  }
+
+  .icon-header-menu {
+    font-size: $sz-2;
+  }
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  z-index: 30;
+  cursor: pointer;
+}
+
+.navbar-responsive {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 82px;
+  right: 16px;
+  background: $color-secondary;
+  width: 200px;
+  padding: 10px;
+
+  .header-responsive-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+  }
+}
+
+// Responsive positioning
+@media (max-width: $screen-md) {
+  .navbar {
+    display: none;
+  }
+
+  .login-button {
+    display: none;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+    justify-content: end;
+  }
+}

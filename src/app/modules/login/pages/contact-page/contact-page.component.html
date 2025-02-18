@@ -1,0 +1,24 @@
+<div class="contact-page">
+    <div class="contact-info">
+         <!-- Lottie -->
+    <div class="lottie">
+        <ng-lottie [options]="options_lottie_contact"></ng-lottie>
+      </div>
+    </div>
+    <form class="contact-form">
+        <h2 class="title-contact">Contate-Nos</h2>
+        <ng-input-field key="Nome" label="Nome" icon="person" type="text" [control]="form.controls.name_contact" />
+        <ng-input-field key="Email" label="Email" icon="mail" type="text" [control]="form.controls.email_contact" />
+
+        <ng-input-field type="textarea" [config_textarea]="config_textarea_message_contact"
+        [control]="form.controls.message_contact" label="Mensagem"
+        [required]="false"></ng-input-field>
+
+        <div class="button-form">
+            <ng-button typeBtn="secondary" label="Enviar" [prefixIcon]="true" iconName="send" (btnClick)="sendContact()"></ng-button>
+        </div>
+        
+        
+    </form>
+
+</div>

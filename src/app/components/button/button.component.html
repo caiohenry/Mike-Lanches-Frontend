@@ -1,0 +1,14 @@
+<button [attr.typeBtn]="typeBtn" [type]="type" (click)="onClick()" [disabled]="this.disabled">
+  @if(prefixIcon) {
+  <i class="material-icons">{{iconName}}</i>
+  }
+  @if(typeBtn !== 'help' && typeBtn !== 'delete-file' && typeBtn !== 'nav') {
+  <p class="text-button">
+    {{ label }}
+  </p>
+
+  }
+  @if(suffixIcon) {
+  <i class="material-icons">{{iconName}}</i>
+  }
+</button>

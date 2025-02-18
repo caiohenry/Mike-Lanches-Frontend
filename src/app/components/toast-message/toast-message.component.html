@@ -1,0 +1,26 @@
+<p-toast [baseZIndex]="5000" [hideTransitionOptions]="'0ms'">
+    <ng-template let-message #message #headless let-closeFn="closeFn">
+        <div class="flex flex-col items-start flex-auto" style="width: 100%;">
+            <div [class]="'background-color-' + message.severity" style="display: flex; height: 100px; width: 20px; border-radius: 10px 0 0 10px">
+            </div>
+            <div class="flex flex-col items-center" style="height: 100px; align-items:center;">
+                <i class="material-icons-outlined" style="font-size: 4rem;" [class]="'color-' + message.severity">
+                    @if(message.severity == 'error'){
+                        close
+                    } @else if (message.severity == 'success') {
+                        check
+                    }
+                </i>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px; justify-content: center; width: 400px;">
+                <div class="font-low text-lg" [class]="'color-' + message.severity">{{ message.summary }}</div>
+                <div class="font-low text-lg" [class]="'color-' + message.severity">{{ message.detail }}</div>
+            </div>
+
+            <div class="flex gap-4 mb-4 justify-end" style="padding: 10px;">
+                <i class="material-icons-outlined" [class]="'color-' + message.severity" style="font-size: 30px; cursor: pointer" (click)="closeFn($event)">close</i>
+            </div>
+            
+        </div>
+    </ng-template>
+</p-toast>

@@ -1,0 +1,78 @@
+// Imports the index from styles
+@use "index" as *;
+
+// Style for global items
+* {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Styles for HTML and Body tags
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #f5f1eb;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+//Styles for the toast primeNG component
+.p-toast {
+  width: 30rem;
+  top: 0;
+  right: 0;
+  margin: 1rem;
+
+  .p-toast-message {
+    margin: 0 0 1rem;
+    border: none;
+    border-radius: 10px;
+    height: 100px;
+    width: 500px;
+    display: flex;
+
+    .p-toast-message-content {
+      width: 500px;
+      background-color: green;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .p-toast-message-success {
+    background: rgb(228, 248, 240);
+  }
+
+  .p-toast-message-error {
+    background: rgb(255, 231, 230);
+  }
+
+  .p-toast-message-info {
+    background: rgb(219, 234, 254);
+  }
+
+  .p-toast-message-warn {
+    background: rgb(255, 242, 226);
+  }
+}
+
+@media screen and (max-width: $screen-lg) {
+  .p-toast {
+    width: 100%;
+    margin: 0 !important;
+    padding: $sz-1;
+  }
+}
+
+@media screen and (max-width: $screen-lg) {
+  .p-toast {
+    width: 100%;
+    margin: 0 !important;
+    padding: $sz-1;
+  }
+}

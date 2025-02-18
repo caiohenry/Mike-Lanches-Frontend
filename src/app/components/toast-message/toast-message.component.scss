@@ -1,0 +1,21 @@
+::ng-deep {
+  .p-toast-close-button {
+    color: red;
+    width: 100%;
+    font-size: 20px !important;
+  }
+
+  .color-error {
+    color: red;
+  }
+  .background-color-error {
+    background-color: red;
+  }
+
+  .color-success {
+    color: green;
+  }
+  .background-color-success {
+    background-color: green;
+  }
+}

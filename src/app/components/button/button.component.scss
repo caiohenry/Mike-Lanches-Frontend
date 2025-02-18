@@ -1,0 +1,497 @@
+@use "../../styles/index" as *;
+@use "sass:color";
+
+
+:host {
+
+  button {
+
+    padding: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+    min-width: 10rem;
+    border: 0px;
+    outline: none;
+    font-weight: 400;
+    border-radius: $sz-025 !important;
+    height: 50px;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    gap: 1rem;
+    justify-content: center;
+    vertical-align: middle;
+    font-size: 1.25rem;
+
+    i {
+
+      align-items: center;
+      vertical-align: middle;
+
+    }
+
+    &:disabled {
+
+      border-color: $color-disabled !important;
+      color: $color-disabled !important;
+      cursor: not-allowed;
+
+      &:hover {
+
+        background-color: transparent !important;
+        color: $color-disabled !important;
+
+      }
+
+    }
+
+    @media screen and (max-width: 768px) {
+
+      border-radius: 25px;
+      width: 100%;
+
+    }
+
+  }
+
+  button[typeBtn="outline-white"] {
+
+    background-color: transparent;
+    color: white;
+    border-radius: $sz-025;
+    border: 1px solid white;
+    transition: 600ms;
+
+    &:hover {
+
+      background-color: rgba(0, 0, 0, 0.05);
+
+    }
+
+  }
+
+  button[typeBtn="outline-white-toggle"] {
+
+    background-color: transparent;
+    padding: $sz-025 $sz-05 !important;
+    color: white;
+    border-radius: $sz-025;
+    border: 1px solid white;
+    min-width: 60px !important;
+    height:60px !important;
+    transition: 600ms;
+
+    .text-button {
+
+      display: none;
+
+    }
+
+    i {
+
+      font-size: $fs-175;
+
+    }
+
+    &:hover {
+
+      background-color: rgba(0, 0, 0, 0.05);
+
+    }
+
+  }
+
+  // Button type primary
+  button[typeBtn="primary"] {
+
+    background-color: $color-primary;
+    color: $color-white;
+    transition: 600ms;
+
+    &:hover {
+
+    //   background-color: darken($color-primary, 10%);
+
+    }
+
+    @media screen and (max-width: 768px) {
+
+      min-width: max-content;
+
+    }
+
+  }
+
+  // Button type login
+  button[typeBtn="login"] {
+
+    background-color: $color-secondary;
+    color: $color-white;
+    transition: 600ms;
+
+    &:hover {
+
+    //   background-color: darken($color-secondary, 10%);
+
+    }
+
+  }
+
+  // Button type register
+  button[typeBtn="register"] {
+    background-color: $color-secondary;
+    color: $color-white;
+    transition: 600ms;
+
+    &:hover {
+    //   background-color: darken($color-secondary, 5%);
+    }
+
+
+  }
+
+
+  // Button type help
+  button[typeBtn="help"] {
+
+    background-color: $color-info;
+    color: $color-white;
+    transition: 700ms;
+    // margin-top: 50% ;
+    border-radius: 50% !important;
+    padding: $sz-05 !important;
+    height: 100%;
+    min-width: max-content !important;
+    max-width: max-content !important;
+    width: 100% !important;
+    justify-content: center !important;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+
+    &:hover {
+
+    //   background-color: darken($color-info, 10%);
+
+    }
+
+  }
+
+  button[typeBtn="delete-file"] {
+
+    background-color: $color-delete;
+    color: $color-white;
+    transition: 700ms;
+    border-radius: 50% !important;
+    padding: $sz-05 !important;
+    height: 100%;
+    min-width: max-content !important;
+    max-width: max-content !important;
+    width: 100% !important;
+    justify-content: center !important;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+
+    &:hover {
+
+    //   background-color: darken($color-delete, 10%);
+
+    }
+
+  }
+
+  // Button type nav
+  button[typeBtn="nav"] {
+
+    background-color: transparent;
+    color: $color-white;
+    border: 3px solid $color-white;
+    transition: 700ms;
+    border-radius: 50% !important;
+    padding: $sz-05 !important;
+    height: 100%;
+    min-width: max-content !important;
+    max-width: max-content !important;
+    width: 100% !important;
+    justify-content: center !important;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+
+    &:hover {
+
+    //   background-color: rgba(red($color-black), green($color-black), blue($color-black), 0.1);
+
+    }
+
+  }
+
+  // Button type add
+  button[typeBtn="add"] {
+
+    background-color: $color-primary;
+    color: $color-white;
+    transition: 600ms;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+    &:hover {
+      background-color: #04522d;
+    }
+
+    i {
+
+      font-size: 38px;
+
+    }
+
+    @media screen and (max-width: 768px) {
+
+      min-width: max-content;
+      height: 45px;
+      padding: $sz-05;
+
+    }
+
+  }
+
+  // Button type secondary
+  button[typeBtn="secondary"] {
+    background-color: $color-secondary;
+    color: $color-white;
+    transition: 600ms;
+
+    &:hover {
+
+      background-color: color.adjust($color-secondary, $lightness: -10%);
+
+    }
+
+    @media screen and (max-width: 768px) {
+
+      min-width: max-content;
+
+    }
+
+  }
+
+
+  // Button type info
+  button[typeBtn="info"] {
+
+    background-color: #0062cc;
+    color: $color-white;
+    transition: 600ms;
+
+    &:hover {
+
+    //   background-color: darken(#0062cc, 10%);
+
+    }
+
+    @media screen and (max-width: 768px) {
+
+      min-width: max-content;
+
+    }
+
+  }
+
+  button[typeBtn="contract"] {
+
+    background-color: $color-info;
+    color: $color-white;
+    transition: 600ms;
+
+    &:hover {
+      background-color: #0062cc;
+    }
+
+    @media screen and (max-width: 768px) {
+
+      height: max-content;
+      padding: $sz-05;
+
+    }
+
+  }
+
+  // Button type info-document
+  button[typeBtn="info-document"] {
+  
+    background-color: transparent;
+    color: $color-info;
+    border: 1px solid $color-info;
+    transition: 600ms;
+
+    &:hover {
+
+      background-color: $color-info;
+      color: $color-text-light !important;
+
+    }
+
+    @media screen and (max-width: 768px) {
+
+      min-width: max-content;
+
+    }
+
+  }
+
+
+  // Button type warning
+  button[typeBtn="warning"] {
+    background-color: $color-warning;
+    color: $color-white;
+    transition: 600ms;
+
+    &:hover {
+      background-color: #c89b00;
+    }
+
+    @media screen and (max-width: 768px) {
+
+      min-width: max-content;
+
+    }
+  }
+
+  // Button type outline
+  button[typeBtn="outline"] {
+
+    background-color: transparent;
+    color: $color-primary;
+    border: 1px solid $color-primary;
+    transition: 600ms;
+
+    &:hover {
+
+      background-color: $color-primary;
+      color: $color-text-light !important;
+
+    }
+
+    @media screen and (max-width: 768px) {
+
+      min-width: max-content;
+
+    }
+
+  }
+
+  // Button type outline primary
+  button[typeBtn="outline-primary"] {
+
+    background-color: transparent;
+    color: $color-text-primary;
+    border: 1px solid $color-primary;
+    transition: 600ms;
+
+    &:hover {
+
+      background-color: $color-primary;
+      color: $color-text-light ;
+
+    }
+
+    @media screen and (max-width: 768px) {
+
+      min-width: max-content;
+
+    }
+  }
+
+  // Button type outline delete
+  button[typeBtn="outline-delete"] {
+
+    background-color: transparent;
+    color: $color-delete;
+    border: 1px solid $color-delete;
+    transition: 600ms;
+
+    &:hover {
+
+      background-color: $color-delete;
+      color: $color-text-light !important;
+
+    }
+
+    @media screen and (max-width: 768px) {
+
+      min-width: max-content;
+
+    }
+
+  }
+
+  // Button type outline confirm
+  button[typeBtn="outline-confirm"] {
+
+    background-color: transparent;
+    color: $color-confirm;
+    border: 1px solid $color-confirm;
+    transition: 600ms;
+
+    &:hover {
+
+      background-color: $color-confirm;
+      color: $color-text-light !important;
+
+    }
+
+    @media screen and (max-width: 768px) {
+
+      min-width: max-content;
+
+    }
+
+  }
+
+
+  // Button type outline confirm
+  button[typeBtn="outline-edit"] {
+
+    background-color: transparent;
+    color: $color-warning;
+    border: 1px solid $color-warning;
+    transition: 600ms;
+
+    &:hover {
+
+      background-color: $color-warning;
+      color: $color-text-light !important;
+
+    }
+
+    @media screen and (max-width: 768px) {
+
+      min-width: max-content;
+
+    }
+
+  }
+
+  // Button type outline clear
+  button[typeBtn="outline-clear"] {
+
+    background-color: transparent;
+    color: $color-text-primary;
+    border: 1px solid $color-text-primary;
+    transition: 600ms;
+
+    &:hover {
+
+      background-color: $color-text-primary;
+      color: $color-text-light !important;
+
+    }
+
+    @media screen and (max-width: 768px) {
+
+      min-width: max-content;
+
+    }
+
+  }
+
+
+}

@@ -1,0 +1,48 @@
+<!-- Header -->
+<header class="header-page">
+
+    <!-- Logo -->
+    <div class="logo">
+        <img src="logo.jpeg" alt="Logo Mike Lanches">
+        <span>Mike Lanches</span>
+    </div>
+
+    <!-- NavBar Button Responsive -->
+    <button class="hamburger" (click)="toggleMenu()">
+        <i class="material-icons icon-header-menu">menu</i>
+    </button>
+
+    <!-- NavBar Responsive -->
+    <div class="navbar-responsive" [ngStyle]="menuOpen ? { display: 'flex' } : { display: 'none' }">
+        <div class="header-responsive-item">
+            <a routerLink="home" routerLinkActive="active" (click)="menuOpen = false">Home</a>
+        </div>
+
+        <div class="header-responsive-item">
+            <a routerLink="menu" routerLinkActive="active" (click)="menuOpen = false">Cardápio</a>
+        </div>
+
+        <div class="header-responsive-item">
+            <a routerLink="contact" routerLinkActive="active" (click)="menuOpen = false">Contato</a>
+        </div>
+
+        <div class="header-responsive-item">
+            <a routerLink="login" routerLinkActive="active" (click)="menuOpen = false">Login</a>
+        </div>
+    </div>
+
+    <!-- NavBar -->
+    <nav class="navbar">
+        <ul>
+            <li><a class="item-header" routerLink="home" routerLinkActive="active">Home</a></li>
+            <li><a class="item-header" routerLink="menu" routerLinkActive="active">Cardápio</a></li>
+            <li><a class="item-header" routerLink="contact" routerLinkActive="active">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- Login -->
+    <div class="login-button">
+        <ng-button label="Login" typeBtn="primary" iconName="login" [prefixIcon]="true" (btnClick)="goToLoginPage()"></ng-button>
+    </div>
+
+</header>

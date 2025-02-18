@@ -1,0 +1,57 @@
+@use "../../../../styles/index" as *;
+
+.contact-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h2 {
+            font-size: $sz-2;
+        }
+        p {
+            font-size: $sz-125;
+        }
+
+        .lottie {
+            z-index: 1;
+        }
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        max-width: 700px;
+        justify-content: center;
+
+        .title-contact {
+            font-size: $sz-175;
+        }
+
+        .button-form {
+            margin-top: $sz-1;
+          }
+    }
+}
+
+
+@media screen and (max-width: $screen-md) {
+
+    .contact-page {
+        grid-template-columns: 1fr;
+        align-items: start;
+    }
+    .lottie {
+        display: none;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+}

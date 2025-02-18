@@ -1,0 +1,65 @@
+<div class="input-field">
+
+  @if (label !== '') {
+  <label [attr.for]="this.key === '' ? this.label : this.key" class="input-label"
+    [ngClass]="{'required-field': required()}">{{label}}</label>
+  }
+
+  <p-inputgroup class="custom-input-group"
+    [ngClass]="{'error': this.control.invalid && (this.control.dirty || this.control.touched)}">
+
+    @if (icon !== '') {
+    <p-inputgroup-addon>
+      <i class="material-icons input-icon"
+        [ngClass]="{'error': this.control.invalid && (this.control.dirty || this.control.touched)}">{{icon}}</i>
+    </p-inputgroup-addon>
+    }
+
+    @if (type === 'text') {
+
+    <input pInputText type="text" [formControl]="this.control" [placeholder]="placeholder" [mask]="mask" />
+
+    } @else if (type === 'password') {
+
+    <p-password [formControl]="this.control"
+      [toggleMask]="((this.config_password?.toggle_mask === undefined || this.config_password?.toggle_mask === true) && !readonly())"
+      [feedback]="false">
+
+      <ng-template pTemplate="hideicon">
+        <div class="mask-icon">
+          <i class="material-icons-outlined">visibility_off</i>
+        </div>
+      </ng-template>
+
+      <ng-template pTemplate="showicon">
+        <div class="mask-icon">
+          <i class="material-icons-outlined">visibility</i>
+        </div>
+      </ng-template>
+
+      <ng-template pTemplate="footer">
+        <ng-content select="[pPasswordPanel]"></ng-content>
+      </ng-template>
+
+    </p-password>
+
+    } @else if(type === 'textarea') {
+
+    <textarea class="input-field" [ngClass]="icon === '' ? 'no-icon' : '' " [formControl]="this.control" autocomplete
+      [cols]="this.config_textarea?.cols || 10" [rows]="this.config_textarea?.rows || 5" style="padding: 10px;"
+      [id]="this.key === '' ? this.label : this.key" [readonly]="!!readonly()" pInputText  [required]="required()"></textarea>
+    }
+
+  </p-inputgroup>
+
+  @if(this.control.invalid && (this.control.dirty || this.control.touched)) {
+  <div class="error-messages">
+    @for (error of getErrorMessages(); track $index) {
+    <span>{{ error }}</span>
+    }
+  </div>
+  }
+
+
+
+</div>

@@ -32,7 +32,8 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "node_modules/primeflex/primeflex.css",
+              "src/app/styles/styles.scss"
             ],
             "scripts": []
           },
@@ -91,7 +92,8 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "node_modules/primeflex/primeflex.css",
+              "src/app/styles/styles.scss"
             ],
             "scripts": []
           }

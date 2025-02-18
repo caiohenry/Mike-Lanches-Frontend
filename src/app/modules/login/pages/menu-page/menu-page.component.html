@@ -1,0 +1,9 @@
+<div class="grid-container">
+
+    @for (item of itemMenuList; track $index) {
+    <app-item-menu [nameItem]="item.name_item_menu!" [descriptionItem]="item.description_item_menu!"
+        [imagePathItem]="item.image_item_menu!">
+    </app-item-menu>
+    }
+
+</div>

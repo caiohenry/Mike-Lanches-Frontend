@@ -1,0 +1,19 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+ 
+  
+  /* Responsividade */
+  @media (max-width: 1768px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores7*/
+    }
+  }
+  
+  @media (max-width: 950px) {
+    .grid-container {
+      grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
+    }
+  }
