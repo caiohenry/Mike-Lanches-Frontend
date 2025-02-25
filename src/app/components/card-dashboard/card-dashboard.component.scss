@@ -1,0 +1,188 @@
+@use "../../styles/index" as *;
+
+// Styles Card Container
+.card-container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    border-radius: $sz-025;
+    width: 100%;
+    height: 100%;
+    min-height: 9rem;
+    padding: $sz-05;
+    gap: $sz-05;
+    box-shadow: 0 2.5px 3px 0px gray;
+
+    // Styles Card Container Title
+    .card-container-title {
+
+        display: flex;
+        gap: $sz-05;
+        width: 100%;
+        justify-content: space-between;
+
+        // Styles Card Container Header
+        .card-container-header {
+
+            display: flex;
+            gap: $sz-025;
+            align-items: center;
+
+            i,
+            h2 {
+
+                font-weight: bold;
+                font-size: 28px;
+                color: $color-white;
+            }
+
+        }
+
+
+    }
+
+    // Styles Card Container Content 
+    .card-container-content {
+
+        display: flex;
+        gap: $sz-05;
+        justify-content: space-around;
+
+        span {
+
+            font-weight: bold;
+            color: $color-white;
+            font-size: 46px;
+
+        }
+
+        app-button-component {
+
+            max-width: 2rem !important;
+
+        }
+
+        .card-container-content-selects {
+
+            display: flex;
+            width: 100%;
+            gap: $sz-05;
+            justify-content: flex-end;
+
+            select {
+
+                width: 100px;
+                height: 35px;
+                background: white;
+                border-radius: $sz-025;
+                color: gray;
+                padding-left: 5px;
+                font-size: 14px;
+                border: none;
+                margin: 10px 0;
+
+                // Remove default arrow in Firefox 
+                -moz-appearance: none;
+                // Remove default arrow in Chrome 
+                -webkit-appearance: none;
+            }
+
+            // Add custom arrow in Chrome 
+            select::-ms-expand {
+                display: none;
+            }
+
+            // Style for hover in select
+            select:hover {
+                cursor: pointer;
+            }
+
+            // Style for hover in select options
+            option:hover {
+                background-color: $color-primary !important;
+                color: $color-white;
+            }
+
+            /* Add custom arrow */
+            select::after {
+                content: "\25BC";
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 0 1em;
+                background: #ddd;
+                cursor: pointer;
+                pointer-events: none;
+                -webkit-transition: .25s all ease;
+                -o-transition: .25s all ease;
+                transition: .25s all ease;
+            }
+
+        }
+
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .card-container-header {
+
+        .card-container-title {
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100px;
+
+        }
+
+    }
+
+}
+
+@media screen and (max-width: 1366px) {
+
+    .card-container {
+
+        padding: $sz-05 !important;
+        min-height: 0rem !important;
+
+    }
+
+    .card-container-content {
+
+        display: flex;
+        justify-content: space-between;
+
+        span {
+
+            color: $color-white;
+            font-size: 36px;
+        }
+
+        app-button-component {
+
+            max-width: 2rem !important;
+
+        }
+
+        .card-container-content-selects {
+
+            gap: $sz-05 !important;
+
+        }
+    }
+
+}
+
+.icon-lower-right {
+    position: absolute;
+    right: 10px; // Ajuste conforme necessário
+    bottom: 10px; // Ajuste conforme necessário
+    font-size: $sz-3; // Tamanho maior do ícone
+    opacity: 0.5; // Efeito esmaecido
+    color: #000; // Ou qualquer cor desejada
+}

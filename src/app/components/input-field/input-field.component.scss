@@ -2,7 +2,6 @@
 
 ::ng-deep {
   .input-field {
-    margin-top: $sz-1;
 
     .input-label {
       text-align: start;
@@ -32,7 +31,7 @@
       }
 
       input {
-        font-size: $sz-125;
+        font-size: $sz-1;
         border: none;
         outline: none;  
         padding: 10px;
@@ -68,7 +67,7 @@
               justify-content: center;
               color: rgb(158, 158, 158);
               cursor: pointer;
-              user-select: none;
+              z-index: 2;
             }
           }
         }

@@ -1,0 +1,97 @@
+<!-- Home -->
+<div class="home-page">
+
+    <!-- Cards -->
+    <div class="home-page-grid-cards">
+
+        @for(item of cards; track item){
+
+        <ng-card-dashboard [title]="item.title" [icon]="item.icon" [color]="item.color" [description]="item.description"
+            [money]="item.money" [link]="item.link"></ng-card-dashboard>
+
+        }
+
+    </div>
+
+    <!-- Charts and List -->
+    <div class="home-page-grid-chart-list">
+
+        <!-- home page grid chart -->
+        <div class="home-page-grid-chart">
+
+            <div class="home-page-grid-chart-header">
+                Vendas Anuais
+            </div>
+
+            <!-- Graphic -->
+            <div class="chart  p-2">
+
+                <p-chart type="bar" [data]="data" [options]="options"></p-chart>
+
+
+            </div>
+
+
+
+        </div>
+
+        <!-- home page grid chart -->
+        <div class="home-page-grid-chart">
+
+            <div class="home-page-grid-chart-header">
+                Comidas Mais Vendidas
+            </div>
+
+            <!-- Graphic -->
+            <div class="p-2"
+                style="display: flex; flex-direction: row; align-items: center; height: 100%; justify-content: center">
+
+                <img src="cuzcuz.png" width="400px" height="auto" alt="">
+                <img src="cuzcuz.png" width="400px" alt="">
+
+            </div>
+
+        </div>
+
+        <!-- home page grid chart -->
+        <div class="home-page-grid-chart" style="grid-column: span 1;">
+
+            <div class="home-page-grid-chart-header">
+                Vendas Anuais
+            </div>
+
+            <!-- Graphic -->
+            <div class="chart  p-2">
+
+                <p-chart type="pie" [data]="dataPie" [options]="optionsPie" class="w-full md:w-[30rem]" />
+            
+            </div>
+            <div style="padding: 1rem; text-align: start">
+                <p>A - Vendas Físicas</p>
+                <p>B - Tele Vendas</p>
+                <p>C - Vendas via PIX</p>
+            </div>
+        </div>
+
+        <!-- home page grid chart -->
+        <div class="home-page-grid-chart" style="grid-column: span 3;">
+
+            <div class="home-page-grid-chart-header">
+                Vendas Anuais
+            </div>
+
+            <!-- Graphic -->
+            <div class="chart  p-2">
+
+                <p-chart type="line" [data]="dateGrafh" [options]="optionsGrafh" class="h-[30rem]" />
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div style="padding-top: 0.5rem;"></div>
+</div>

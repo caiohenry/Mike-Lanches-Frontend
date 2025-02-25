@@ -6,7 +6,7 @@
 
   button {
 
-    padding: 10px 20px;
+    padding: $sz-125 20px;
     cursor: pointer;
     display: flex;
     width: 100%;
@@ -74,7 +74,6 @@
   button[typeBtn="outline-white-toggle"] {
 
     background-color: transparent;
-    padding: $sz-025 $sz-05 !important;
     color: white;
     border-radius: $sz-025;
     border: 1px solid white;
@@ -108,12 +107,6 @@
     background-color: $color-primary;
     color: $color-white;
     transition: 600ms;
-
-    &:hover {
-
-    //   background-color: darken($color-primary, 10%);
-
-    }
 
     @media screen and (max-width: 768px) {
 

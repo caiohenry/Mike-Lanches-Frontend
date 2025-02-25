@@ -14,10 +14,22 @@ html,
 body {
   height: 100%;
   width: 100%;
-  background-color: #f5f1eb;
+  background-color: #fff;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
     "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+app-dashboard-page {
+  width: 100%;
+}
+
+// Styles for the page list
+app-client-page, 
+app-item-menu-page, 
+app-delivery-driver-page,
+app-delivery-driver-form {
+  width: 100% !important;
 }
 
 //Styles for the toast primeNG component
@@ -74,5 +86,226 @@ body {
     width: 100%;
     margin: 0 !important;
     padding: $sz-1;
+  }
+}
+
+
+
+.list-page {
+  display: flex;
+  flex-direction: column;
+  gap: $sz-05;
+  padding: $sz-05;
+  height: 100%;
+  width: 100%;
+
+  .content-title-page-tabview {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: $sz-1;
+    width: 100%;
+    gap: $sz-1;
+
+    .filter-and-search-field {
+      display: flex;
+      gap: $sz-1;
+      align-items: center;
+    }
+
+    ng-input-field .input-block .input-field {
+      max-width: 30rem !important;
+    }
+
+    ng-input-field {
+      width: auto;
+      min-width: auto !important;
+    }
+
+    ng-input-field .input-block {
+      max-width: 30rem;
+    }
+  }
+
+  // Styles for the page list header
+  .content-title-page {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: $sz-05;
+    align-items: center !important;
+
+  }
+
+  // Styles for the page list header
+  .content-title-page-solo-btn {
+    display: flex;
+    gap: $sz-05;
+  }
+
+  // Styles for the page list header
+  .content-title-page-solo {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: $sz-05;
+
+    ng-input-field .input-block .input-field {
+      min-width: 10rem;
+    }
+  }
+}
+
+// Styles line grid's
+.line-grid-1 {
+  grid-column: span 1;
+}
+
+.line-grid-2 {
+  grid-column: span 2;
+}
+
+.line-grid-3 {
+  grid-column: span 3;
+}
+
+.line-grid-4 {
+  grid-column: span 4;
+}
+
+// Styles for the grid's
+.grid-4fr {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: $sz-05;
+  padding: $sz-05;
+}
+
+// grid 3fr
+.grid-3fr {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: $sz-05;
+}
+
+// Styles for the form page with step
+.form-page-with-step {
+  display: flex;
+  flex-direction: column;
+  gap: $sz-05;
+}
+
+// Styles for the form page
+.form-page {
+  display: flex;
+  flex-direction: column;
+  padding: $sz-1;
+  gap: $sz-1;
+  height: 100%;
+  width: 100%;
+
+  p {
+    margin: 0 !important;
+  }
+
+  .file-and-help-button {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $sz-05;
+    width: 100%;
+    height: 100%;
+    align-items: flex-end;
+
+    button {
+      height: 2.2rem !important;
+    }
+  }
+
+  // file and help button within
+  .file-and-help-button-within {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $sz-05;
+    width: 100%;
+    height: 100%;
+    align-items: flex-end;
+
+    button {
+      height: 2.2rem !important;
+    }
+  }
+
+  .buttons-footer-form-just-one-button {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: $sz-1;
+    gap: $sz-05;
+    width: 100%;
+  }
+
+  // Styles for the 1 line form
+  .line-form-1 {
+    display: flex;
+    flex-direction: column;
+    gap: $sz-025;
+    width: 100%;
+  }
+
+  // Styles for the 1 file input form
+  .line-form-with-file-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: flex-end;
+    justify-content: center;
+    gap: $sz-05;
+    width: 100%;
+  }
+
+  // Styles for the 2 line form
+  .line-form-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    justify-content: start;
+    grid-auto-rows: min-content;
+    gap: $sz-05;
+    width: 100%;
+  }
+
+  // Styles for the 2 file input form
+  .line-form-with-file-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-end;
+    justify-content: center;
+    gap: $sz-05;
+    width: 100%;
+  }
+
+  // Styles for the 3 line form
+  .line-form-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: start;
+    justify-content: start;
+    grid-auto-rows: min-content;
+    gap: $sz-05;
+    width: 100%;
+  }
+
+  // Styles for the 4 line form
+  .line-form-4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: start;
+    justify-content: start;
+    grid-auto-rows: min-content;
+    gap: $sz-05;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1363px) {
+  .content-title-page {
+    ng-input-field .input-block .input-field {
+      max-width: 8rem !important;
+    }
   }
 }

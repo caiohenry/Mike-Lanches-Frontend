@@ -1,0 +1,106 @@
+@use "sass:color";
+@use "../../styles/index" as *;
+
+.title-page-comp {
+  display: flex;
+  align-items: center;
+  gap: $sz-05;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0rem 0rem $sz-1 0rem;
+  color: $color-primary;
+  border-bottom: 1px solid #dddddd;
+}
+
+.title-sub-page-comp {
+  display: flex;
+  align-items: center;
+  gap: $sz-05;
+  justify-content: space-between;
+  padding: 0 0rem $sz-05 0rem;
+  border-bottom: 1px solid #e6e6e6;
+  width: 100%;
+  color: color.adjust($color: $color-secondary, $lightness: -5%);
+}
+
+.page-icon {
+  font-size: $fs-25;
+  background-color: $color-primary;
+  padding: $sz-05;
+  border-radius: $sz-025;
+  color: white;
+}
+
+.page-title {
+  font-size: $fs-15;
+  margin: 0;
+  color: $color-primary;
+  overflow-wrap: break-word;
+}
+
+.page-subtitle {
+  color: gray;
+  font-size: $fs-075;
+  overflow-wrap: break-word;
+}
+
+.title-page-header {
+  display: flex;
+  gap: $sz-1;
+}
+
+@media screen and (max-width: $screen-lg) {
+  .title-sub-page-comp,
+  .title-page-comp {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+
+   
+  }
+
+  .title-page-header {
+    align-items: center;
+
+    i {
+      font-size: $sz-15;
+    }
+  }
+
+  .page-title {
+    font-size: 1.2rem;
+  }
+
+  .page-subtitle {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .page-title {
+    font-size: $fs-2;
+  }
+
+  .page-subtitle {
+    font-size: $fs-05;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .page-title {
+    font-size: $fs-175;
+  }
+
+  .page-subtitle {
+    font-size: $fs-05;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .page-title {
+    font-size: $fs-15;
+  }
+
+  .page-subtitle {
+    font-size: $fs-025;
+  }
+}
