@@ -1,0 +1,39 @@
+<!-- Card Container -->
+<div class="card-container" [style.backgroundColor]="color">
+
+    <!-- Card Title -->
+    <div class="card-container-title">
+
+        <!-- Card Title Header -->
+        <div class="card-container-header">
+
+            <i class="material-icons">{{icon}}</i>
+            <h2 class="card-container-title">{{ title }}</h2>
+
+        </div>
+
+        <div class="card-container-button">
+            <!-- <ng-button typeBtn="nav" [suffixIcon]="true" iconName="arrow_forward"
+                ()="navCardFunction(link)"></ng-button> -->
+        </div>
+
+    </div>
+
+    <!-- Card Content -->
+    <div class="card-container-content">
+
+        <span>
+            @if(!money){
+
+                {{description}}
+            } @else {
+                {{description | currency:'BRL':'symbol':'1.0-0'}}
+            }
+        </span>
+
+
+    </div>
+
+    <i class="material-icons icon-lower-right">{{icon}}</i>
+
+</div>

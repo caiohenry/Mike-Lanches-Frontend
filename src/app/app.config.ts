@@ -10,8 +10,8 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideLottieOptions } from 'ngx-lottie';
-import { authInterceptor } from './interceptors/auth.interceptor';
-import { loadingInterceptor } from './interceptors/loading.interceptor';
+import { authInterceptor } from './core/interceptors/auth.interceptor';
+import { loadingInterceptor } from './core/interceptors/loading.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -21,7 +21,6 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }), 
     provideHttpClient(),
     provideEnvironmentNgxMask(),
-    provideAnimations(),
     provideAnimationsAsync(),
     importProvidersFrom(
       JwtModule.forRoot({

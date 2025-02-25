@@ -1,0 +1,71 @@
+@use "../../../../styles/index" as *;
+
+// Home Page
+.home-page {
+    
+  // Styles for chart prime-ng
+  .chart {
+    height: 100%;
+    width: 100%;
+
+    div {
+      height: 100%;
+      width: 100%;
+    }
+
+    canvas {
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: $sz-1;
+
+  //Grid Cards
+  .home-page-grid-cards {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(5rem, auto);
+    gap: $sz-1;
+  }
+
+  //home page grid chart list
+  .home-page-grid-chart-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $sz-1;
+
+    // home page grid chart
+    .home-page-grid-chart {
+      display: flex;
+      flex-direction: column;
+      grid-column: span 2;
+      background-color: $color-white;
+      border-radius: $sz-025;
+      box-shadow: 0 0px 6px 0px rgba(0, 0, 0, 0.12);
+
+      // home page grid chart header
+      .home-page-grid-chart-header {
+        display: flex;
+        height: max-content;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid $color-gray-light;
+        background-color: $color-background-page;
+        padding: $sz-1;
+        border-radius: $sz-025 $sz-025 0 0;
+        z-index: 1;
+      }
+    }
+
+    .home-page-grid-list {
+      box-shadow: 0 0px 6px 0px rgba(0, 0, 0, 0.12);
+      height: max-content;
+    }
+  }
+}

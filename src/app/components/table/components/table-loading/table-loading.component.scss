@@ -1,0 +1,26 @@
+.table-loading-comp {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  z-index: 1001;
+  border-radius: 0.5rem;
+
+  .lottie-loading {
+
+    width: 300px;
+    height: 300px;
+
+  }
+
+}
+
+::ng-deep {
+  table-loading {
+    height: 100%;
+    width: 100%;
+  }
+}

@@ -1,0 +1,39 @@
+<div class="list-page">
+
+    <app-page-title icon="person" title="Produtos" subtitle="Página voltada para gerenciamento de produtos.">
+
+        <div class="content-title-page-solo">
+
+            <ng-input-field [control]="searchControl" placeholder="Pesquisar..." icon="search"></ng-input-field>
+
+        </div>
+
+    </app-page-title>
+    
+
+    <div class="overflow-auto h-full">
+
+        <ng-table [columns]="tableNotifications" [value]="listNotifications$|async" [search_field]="searchControl"
+            [loading_table]="loading" (onLazyLoad)="getNotifications($event)" [lazy]="true">
+
+            <ng-template #options let-rowData>
+
+                <div class="flex h-full gap-3 w-full justify-content-center ">
+
+                    @if (!rowData.read_notification) {
+                        <ng-button typeBtn="outline-primary" label="Verificar" iconName="check"
+                        [prefixIcon]="true"></ng-button>
+                    }
+                    
+                    <ng-button typeBtn="outline-delete" label="Excluir" iconName="delete"
+                        [prefixIcon]="true"></ng-button>
+
+                </div>
+
+            </ng-template>
+
+        </ng-table>
+
+    </div>
+
+</div>

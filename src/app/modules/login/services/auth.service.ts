@@ -33,14 +33,19 @@ export class AuthService {
 
     // Method to send the login form to the API
     postForm(form: Auth) {
-        return this.http$.post<any>(`${this.baseUrl}/token-auth/`, form);
+        return this.http$.post<any>(`${this.baseUrl}/token-auth/`, form, {
+            headers: {
+                'skip-auth': 'true',
+            },
+        });
     }
 
     // Method to set the token in the local storage
     setToken(token: any) {
-        this.access = token.access;
-        this.refresh = token.refresh;
-        sessionStorage.removeItem('closed_lead');
+        this.access = token.token_access;
+        this.refresh = token.token_access;
+
+        console.log(this.access)
     }
 
     get remember_me() {
@@ -87,6 +92,7 @@ export class AuthService {
     }
 
     isUserLogged() {
+        console.log(this.access)
         // Check if the token is valid
         if (this.isTokenInvalid(this.access)) {
             if (this.isTokenInvalid(this.refresh)) {

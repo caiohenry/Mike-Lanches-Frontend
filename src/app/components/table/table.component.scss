@@ -1,0 +1,160 @@
+@use "../../styles/index" as *;
+
+::ng-deep {
+  .table-comp {
+    .container-status {
+      padding: $sz-025;
+      border-radius: 10px;
+      text-align: center;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .p-paginator {
+      padding: $sz-05 !important;
+    }
+
+    .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+      background: $color-primary;
+      border-color: #eff6ff;
+      color: $color-white;
+      border-radius: $sz-025 !important ;
+    }
+
+    &.small-width {
+      // .container-status {
+      //   font-size: 0.7rem;
+      // }
+    }
+
+    .active {
+      border: solid 2px rgb(42, 245, 42);
+      background-color: rgb(42, 245, 42, 0.5);
+    }
+
+    .disponible {
+      border: solid 2px rgb(19, 121, 19);
+      background-color: rgb(19, 121, 19, 0.5);
+    }
+
+    .indisponible {
+      border: solid 2px rgb(203, 123, 32);
+      background-color: rgb(203, 123, 32, 0.5);
+    }
+
+    .wait {
+      border: solid 2px rgb(48, 48, 250);
+      background-color: rgb(48, 48, 250, 0.5);
+    }
+
+    .refuse {
+      border: 2px solid rgb(243, 35, 35);
+      background-color: rgba(243, 35, 35, 0.5);
+    }
+
+    .p-datatable .p-datatable-thead > tr > th {
+      background-color: #edf3f9;
+      color: $color-black;
+      font-size: $sz-1;
+      text-align: start;
+      padding: $sz-05;
+
+      .thead-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: $sz-05;
+
+        &:not(:has(p-sortIcon)) {
+          cursor: default;
+          justify-content: start;
+        }
+
+        &:not(:has(p)) {
+          justify-content: center;
+        }
+
+        .thead-text {
+          display: flex;
+          align-items: center;
+          font-size: $sz-1;
+          gap: $sz-025;
+
+          i {
+            color: $color-primary;
+            font-size: $sz-15;
+          }
+        }
+
+        p-sorticon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+
+    .p-sortable-column.p-highlight .p-sortable-column-icon {
+      color: $color-primary;
+    }
+
+    .p-datatable .p-sortable-column-icon {
+      width: 18px;
+      height: 18px;
+      color: rgb(173, 173, 173);
+    }
+
+    .p-datatable .p-datatable-tbody > tr > td {
+      padding: $sz-05;
+    }
+  }
+}
+
+@media screen and (max-width: 1363px) {
+  ::ng-deep {
+    .container-status {
+      font-size: 0.8rem !important;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  ::ng-deep {
+    .table-comp {
+      .p-datatable .p-datatable-thead > tr > th {
+        padding: $sz-025;
+
+        .thead-content {
+          gap: $sz-025;
+
+          .thead-text {
+            i {
+              font-size: $sz-1;
+            }
+
+            p {
+              font-size: $sz-075;
+            }
+          }
+        }
+      }
+
+      .p-datatable .p-datatable-tbody > tr > td {
+        padding: $sz-025;
+        font-size: $sz-075;
+      }
+    }
+
+    .p-paginator .p-paginator-current {
+      font-size: $sz-075;
+    }
+
+    .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+      font-size: $sz-075;
+    }
+
+    .p-datatable .p-paginator-bottom {
+      font-size: $sz-075;
+    }
+  }
+}

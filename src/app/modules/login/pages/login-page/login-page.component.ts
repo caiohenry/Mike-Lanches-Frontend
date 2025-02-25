@@ -8,6 +8,7 @@ import { AuthService } from '../../services/auth.service';
 import { HandleMessage } from '../../../../services/handle-message.service';
 import { AuthGroup } from '../../interfaces/auth-interface';
 import { PasswordFieldConfig } from '../../../../components/input-field/models/input-config.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -25,7 +26,7 @@ export class LoginPageComponent {
     toggle_mask: true,
   };
 
-  constructor(private service$: AuthService, private msg$: HandleMessage) {
+  constructor(private service$: AuthService, private msg$: HandleMessage, private router$: Router) {
     this.form = this.service$.getForm();
   }
 
@@ -39,7 +40,7 @@ export class LoginPageComponent {
         next: (response: any) => {
 
           // Set token
-          this.service$.setToken(response);
+          this.service$.setToken(response.message);
 
           // Add messsage success login
           this.msg$.addMsg(
@@ -47,7 +48,9 @@ export class LoginPageComponent {
             'Sucesso!',
             `Bem-vindo(a), ${this.service$.name_user}`
           );
-          // this.route$.navigateByUrl('/home');
+
+          // Navigate to dashboard page
+          this.router$.navigateByUrl('/dashboard');
         },
         error: (error: HttpErrorResponse) => {
 

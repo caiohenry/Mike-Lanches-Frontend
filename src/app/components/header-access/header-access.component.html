@@ -1,0 +1,20 @@
+<div class="sidebar">
+    <div class="logo">
+        <h2>Mike Lanches</h2>
+    </div>
+    <ul class="menu">
+        <li routerLinkActive="active" routerLink="dashboard"><i class="fas fa-calendar-alt"></i> Dashboard</li>
+        
+    </ul>
+    <h3>Cadastro</h3>
+    <ul class="menu">
+        <li routerLinkActive="active" routerLink="client"><i class="material-icons page-icon">person</i>Clientes</li>
+        <li><i class="fas fa-bullseye"></i> Pedidos</li>
+        <li routerLinkActive="active" routerLink="delivery-driver"><i class="material-icons page-icon">motorcycle</i> Entregadores</li>
+        <li routerLinkActive="active" routerLink="item-menu"><i class="material-icons page-icon">person</i> Cardápio</li>
+    </ul>
+    <ul class="menu">
+        <li (click)="logout()"><i class="fas fa-calendar-alt"></i> Logout</li>
+        
+    </ul>
+</div>

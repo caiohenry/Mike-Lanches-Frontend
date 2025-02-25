@@ -1,0 +1,51 @@
+<div class="form-page">
+
+    <!-- Title Component -->
+    <app-page-title icon="person_add" title="Cadastro de Colaborador"
+      subtitle="Página voltada para o cadastro de colaborador.">
+  
+    </app-page-title>
+  
+    <!-- Content Register -->
+    <div class="overflow-auto h-full">
+  
+      <form [formGroup]="form">
+  
+        <div class="line-form-2">
+  
+          <ng-input-field key="Name" label="Nome" icon="person" type="text"
+            [control]="form.controls.user_name" />
+  
+          <div class="line-form-2">
+  
+            <ng-input-field key="CPF" label="CPF" icon="description" type="text"
+              [control]="form.controls.user_email" />
+  
+  
+            <ng-input-field key="Telefone" label="Telefone" icon="phone" type="text" mask="(00) 00000-0000"
+              [control]="form.controls.user_password" />
+  
+          </div>
+  
+        </div>
+  
+        <div class="flex pt-4 justify-content-between">
+  
+          <ng-button typeBtn="secondary" label="Cancelar" type="button" [prefixIcon]="true"
+            (click)="cancelForm()" iconName="cancel"></ng-button>
+  
+          <!-- Clear Form -->
+          <ng-button typeBtn="warning" label="Limpar" type="button" [prefixIcon]="true"
+            (click)="cleanForm()" iconName="cleaning_services"></ng-button>
+  
+          <ng-button typeBtn="primary" label="Salvar" iconName="save" [prefixIcon]="true"
+            (click)="submitCollaborator()"></ng-button>
+  
+        </div>
+  
+  
+      </form>
+  
+    </div>
+  
+  </div>

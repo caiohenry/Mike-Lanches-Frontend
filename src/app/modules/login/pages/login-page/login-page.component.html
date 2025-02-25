@@ -4,8 +4,8 @@
             <h2 class="login-title">Login</h2>
             <form class="form-login">
 
-                <ng-input-field [control]="form.controls.user_email" label="Email" icon="mail"></ng-input-field>
-                <ng-input-field [control]="form.controls.user_password" label="Senha" icon="password"></ng-input-field>
+                <ng-input-field [control]="form.controls.user_email" type="text" label="Email" icon="mail"></ng-input-field>
+                <ng-input-field [control]="form.controls.user_password" type="password" label="Senha" icon="password" [config_password]="config_password"></ng-input-field>
 
                 <div class="button-form">
                     <ng-button typeBtn="secondary" label="Entrar" [prefixIcon]="true" iconName="login" (btnClick)="postLogin()"></ng-button>

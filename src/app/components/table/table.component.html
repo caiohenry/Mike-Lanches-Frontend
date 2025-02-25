@@ -1,0 +1,113 @@
+<div class="h-full w-full">
+
+  <p-table [columns]="columns" [value]="lazy ? value()?.message.items : search_field?.value ? filteredValue : value()"
+    [lazy]="lazy" [lazyLoadOnInit]="lazy" [loading]="loading_table"
+    [ngStyle]="loading_table === true ? { display: 'none' } : { display: 'block' }" styleClass="p-datatable-striped"
+    [totalRecords]="value()?.count" (onLazyLoad)="onLazyLoadEvent($event)" [(first)]="page" [paginator]="true"
+    [rows]="10" [showCurrentPageReport]="true" class=" table-comp"
+    currentPageReportTemplate="{totalRecords} entrada(s) encontrada(s)">
+    
+
+    <ng-template pTemplate="header" let-columns>
+
+      <tr>
+        @if (show_index) {
+        <th style="width: 1%;">
+          <div class="thead-content">
+            <div class="thead-text">
+              <i class="material-icons-round">format_list_numbered</i>
+            </div>
+          </div>
+        </th>
+        }
+        @for (col of columns; track $index) {
+        <th [pSortableColumn]="col.sort === undefined && col.sort !== true ? col.field : ''"
+          [style]="'width: ' + col.width" [class]="col.hide_field? col.hide_field : ''">
+          <div class="thead-content">
+            <div class="thead-text">
+              @if (col.icon) {
+              <i class="material-icons-round">{{col.icon}}</i>
+              }
+              @if (col.header) {
+              <p>{{ col.header }}</p>
+              }
+            </div>
+
+            @if (col.sort === undefined && col.sort !== true) {
+            <p-sortIcon [field]="col.field" />
+            }
+          </div>
+        </th>
+        }
+        @if (headerTemplateRef) {
+        <th>
+          <div class="thead-content justify-content-center">
+            <div class="thead-text">
+              <i class="material-icons-round">settings</i>
+              <p>Opções</p>
+            </div>
+          </div>
+        </th>
+        }
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-rowData let-columns="columns" let-index="rowIndex">
+      @if (!bodyTemplateRef) {
+      <tr>
+        @if (show_index) {
+        <td>
+          <p>{{ index + 1 }}</p>
+        </td>
+        }
+        @for (col of columns; track $index) {
+        <td [class]="col.hide_field? col.hide_field : ''">
+          @if (!col?.conditions) {
+          @if (col?.html_field) {
+            <div [innerHTML]="getHtmlContent(col, rowData)"></div>
+          } @else {
+          {{ rowData[col.field] }}
+          }
+          } @else {
+          @if (col.conditions[0].value === rowData[col.field]) {
+          {{ col.conditions[0].label}}
+          } @else {
+          {{ col.conditions[1].label}}
+          }
+          }
+        </td>
+        }
+        @if (headerTemplateRef) {
+        <td style="width: 0%">
+          <ng-container [ngTemplateOutlet]="headerTemplateRef" [ngTemplateOutletContext]="{$implicit: rowData}">
+          </ng-container>
+        </td>
+        }
+
+      </tr>
+      } @else {
+      <tr>
+        @if (show_index) {
+        <td>
+          <p>{{ index + 1 }}</p>
+        </td>
+        }
+        <ng-container [ngTemplateOutlet]="bodyTemplateRef"
+          [ngTemplateOutletContext]="{$implicit:rowData}"></ng-container>
+        @if (headerTemplateRef) {
+        <td style="width: 0%">
+          <ng-container [ngTemplateOutlet]="headerTemplateRef" [ngTemplateOutletContext]="{$implicit: rowData}">
+          </ng-container>
+        </td>
+        }
+      </tr>
+      }
+
+    </ng-template>
+
+  </p-table>
+
+  @if (loading_table) {
+  <ng-table-loading></ng-table-loading>
+  }
+</div>
